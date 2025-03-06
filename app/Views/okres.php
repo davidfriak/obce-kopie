@@ -42,8 +42,8 @@
 
 <div class="justify-content-center">
 <?= $pager->links(); ?>
-<?php echo anchor("okres/".$kod."/perPage/5", "5", ['class' => 'btn btn-dark btn-lg']); ?>
 <?php echo anchor("okres/".$kod."/perPage/10", "10", ['class' => 'btn btn-dark btn-lg']); ?>
 <?php echo anchor("okres/".$kod."/perPage/20", "20", ['class' => 'btn btn-dark btn-lg']); ?>
 <?php echo anchor("okres/".$kod."/perPage/30", "30", ['class' => 'btn btn-dark btn-lg']); ?>
+<?php echo anchor("okres/".$kod."/perPage/50", "50", ['class' => 'btn btn-dark btn-lg']); ?>
 <?= $this->endSection() ?>

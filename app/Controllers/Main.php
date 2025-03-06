@@ -27,12 +27,10 @@ class Main extends BaseController
         
     }
     
-    public function index(): string
-    {
+    public function index(): string {
         return view('welcome_message');
     }
-    public function zlinskykraj()
-    {
+    public function zlinskykraj() {
         $this->data["obec"] = $this->obec->select("obec.nazev, Count(*) as pocet")->join("cast_obce", "obec.kod = cast_obce.obec", "inner")->join("ulice", "ulice.cast_obce = cast_obce.kod", "inner")->join("adresni_misto", "adresni_misto.ulice = ulice.kod", "inner")->join("okres", "okres.kod = obec.okres")->groupBy("obec.kod")->orderBy("pocet", "desc")->paginate(20);
         
         $pager = $this->obec->pager;
